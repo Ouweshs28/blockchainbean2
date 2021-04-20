@@ -1,7 +1,5 @@
 /* tslint:disable:no-any */
 import {operation, param, requestBody} from '@loopback/rest';
-import {Coffee} from '../models/coffee.model';
-import {TransferCoffee} from '../models/transfer-coffee.model';
 import { BlockChainModule } from '../blockchainClient';
 import { STATUS_CODES } from 'http';
 import { response } from 'express';

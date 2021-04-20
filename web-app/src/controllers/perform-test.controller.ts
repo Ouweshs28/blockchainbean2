@@ -1,6 +1,6 @@
 /* tslint:disable:no-any */
 import { operation, param, requestBody } from '@loopback/rest';
-import { SubmitFairTradeData } from '../models/submit-fair-trade-data.model';
+import { PerformTest } from '../models/perform-test.model';
 import { ResponseMessage } from '../models/response-message.model';
 import { BlockChainModule } from '../blockchainClient';
 
@@ -10,7 +10,7 @@ let blockchainClient = new BlockChainModule.BlockchainClient();
  * by submitFairTradeData
  * A transaction named submitFairTradeData
  */
-export class SubmitFairTradeDataController {
+export class PerformTestController {
   constructor() { }
 
   /**
@@ -20,11 +20,11 @@ export class SubmitFairTradeDataController {
    * @param requestBody Model instance data
    * @returns Request was successful
    */
-  @operation('post', '/submitFairTradeData')
-  async submitFairTradeDataCreate(@requestBody() requestBody: SubmitFairTradeData): Promise<ResponseMessage> {
+  @operation('post', '/performTest')
+  async performTestCreate(@requestBody() requestBody: PerformTest): Promise<ResponseMessage> {
 
     try {
-      console.log('submitFairTradeData, requestBody: ')
+      console.log('performTest, requestBody: ')
 
 
       console.log('request body: ')
@@ -35,27 +35,19 @@ export class SubmitFairTradeDataController {
       console.log(networkObj)
       let dateStr = new Date().toDateString();
       // dateStr = dateStr.toDateString();
-      let dataForFairTrade = {
-        function: 'submitFairTradeData',
-        reportName: requestBody.reportName,
-        orgDescription: requestBody.organizationDescription,
-        reportYear: requestBody.reportYear,
-        fairTradePremiumInvested: requestBody.fairtradePremiumInvested,
-        investmentTitle1: requestBody.investmentTitle1,
-        investmentAmount1: requestBody.investmentAmount1,
-        investmentTitle2: requestBody.investmentTitle2,
-        investmentAmount2: requestBody.investmentAmount2,
-        investmentTitle3: requestBody.investmentTitle3,
-        investmentAmount3: requestBody.investmentAmount3,
-        batchId: requestBody.batchId,
-        transactionId: requestBody.transactionId,
+      let labData = {
+        function: 'performTest',
+        clinicalLaboratory: requestBody.clinicalLaboratory,
+        applicationId: requestBody.applicationId,
+        testResults: requestBody.testResults,
+        labComments: requestBody.labComments,
         timestamp: dateStr,
         contract: networkObj.contract
       };
 
-      await blockchainClient.submitFairTradeData(dataForFairTrade);
+      await blockchainClient.performTest(labData);
 
-      let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added Fair Trade Data to Blockchain' });
+      let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added performTest to Blockchain' });
       return responseMessage;
 
     } catch (error) {

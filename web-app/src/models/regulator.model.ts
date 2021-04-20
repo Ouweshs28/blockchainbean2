@@ -18,7 +18,7 @@ export class Regulator {
    * The class identifier for this type
    */
   @property({name: '$class'})
-  $class?: string = 'org.ibm.coffee.Regulator';
+  $class?: string = 'org.ibm.device.Regulator';
 
   /**
    * The instance identifier for this type

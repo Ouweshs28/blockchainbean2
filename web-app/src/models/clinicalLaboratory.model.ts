@@ -3,12 +3,12 @@ import {model, property} from '@loopback/repository';
 import {Address} from './address.model';
 
 /**
- * The model class is generated from OpenAPI schema - Shipper
- * A participant named Shipper
+ * The model class is generated from OpenAPI schema - Regulator
+ * A participant named Regulator
  */
-@model({name: 'Shipper'})
-export class Shipper {
-  constructor(data?: Partial<Shipper>) {
+@model({name: 'clinicalLaboratory'})
+export class ClinicalLaboratory {
+  constructor(data?: Partial<ClinicalLaboratory>) {
     if (data != null && typeof data === 'object') {
       Object.assign(this, data);
     }
@@ -18,13 +18,13 @@ export class Shipper {
    * The class identifier for this type
    */
   @property({name: '$class'})
-  $class?: string = 'org.ibm.coffee.Shipper';
+  $class?: string = 'org.ibm.device.clinicalLaboratory';
 
   /**
    * The instance identifier for this type
    */
-  @property({name: 'shipperId', required: true})
-  shipperId: string;
+  @property({name: 'clinicalLaboratoryId', required: true})
+  clinicalLaboratoryId: string;
 
   /**
    * 

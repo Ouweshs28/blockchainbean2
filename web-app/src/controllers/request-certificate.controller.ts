@@ -1,16 +1,16 @@
 /* tslint:disable:no-any */
 import { operation, param, requestBody } from '@loopback/rest';
-import { PourCup } from '../models/pour-cup.model';
+import { RequestCertificate } from '../models/request-certificate.model'
 import { ResponseMessage } from '../models/response-message.model';
 import { BlockChainModule } from '../blockchainClient';
 
 let blockchainClient = new BlockChainModule.BlockchainClient();
 /**
  * The controller class is generated from OpenAPI spec with operations tagged
- * by pourCup
- * A transaction named pourCup
+ * by requestCertificate 
+ * A transaction named requestCertificate 
  */
-export class PourCupController {
+export class RequestCertificateController {
   constructor() { }
 
   /**
@@ -20,7 +20,7 @@ export class PourCupController {
    * @param requestBody Model instance data
    * @returns Request was successful
    */
-  @operation('post', '/pourCup', {
+  @operation('post', '/requestCertificate ', {
     responses: {
       '200': {
         description: 'ResponseMessage model instance',
@@ -28,35 +28,32 @@ export class PourCupController {
       },
     },
   })
-  async pourCupCreate(@requestBody() requestBody: PourCup): Promise<ResponseMessage> {
+  async requestCertificateCreate(@requestBody() requestBody: RequestCertificate): Promise<ResponseMessage> {
 
     try {
-      console.log('pourCup, requestBody: ')
-      console.log(requestBody)
-
       let networkObj = await blockchainClient.connectToNetwork();
-      console.log('newtork obj: ')
-      console.log(networkObj)
+
       let dateStr = new Date().toDateString();
-      // dateStr = dateStr.toDateString();
-      let dataForPourCup = {
-        function: 'pourCup',
-        cupId: requestBody.cupId,
-        batchId: requestBody.batchId,
-        transactionId: requestBody.transactionId,
+      let dataForRequestCertificate = {
+        function: 'requestCertificate',
+        farmerName: requestBody.farmerName,
+        farmerId: requestBody.farmerId,
+        address:requestBody.address,
+        cropName:requestBody.cropName,
+        ferlizers:requestBody.ferlizers,
+        timestamp: dateStr,
         contract: networkObj.contract
       };
 
-      await blockchainClient.pourCup(dataForPourCup);
+      await blockchainClient.requestCertificate(dataForRequestCertificate);
 
-      let responseMessage: ResponseMessage = new ResponseMessage({ message: `Pour Cup id ${requestBody.cupId} added to Blockchain` });
+      let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added farmer request to Blockchain' });
       return responseMessage;
 
     } catch (error) {
       let responseMessage: ResponseMessage = new ResponseMessage({ message: error, statusCode: '400' });
       return responseMessage;
     }
-
   }
 
   /**
@@ -66,8 +63,8 @@ export class PourCupController {
    * @param filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({"something":"value"})
    * @returns Request was successful
    */
-  // @operation('get', '/pourCup')
-  // async pourCupFind(@param({ name: 'filter', in: 'query' }) filter: string): Promise<PourCup[]> {
+  // @operation('get', '/requestCertificate ')
+  // async requestCertificate Find(@param({ name: 'filter', in: 'query' }) filter: string): Promise<requestCertificate []> {
   //   throw new Error('Not implemented');
   // }
 
@@ -79,8 +76,8 @@ export class PourCupController {
    * @param filter Filter defining fields and include - must be a JSON-encoded string ({"something":"value"})
    * @returns Request was successful
    */
-  // @operation('get', '/pourCup/{id}')
-  // async pourCupFindById(@param({ name: 'id', in: 'path' }) id: string, @param({ name: 'filter', in: 'query' }) filter: string): Promise<PourCup> {
+  // @operation('get', '/requestCertificate /{id}')
+  // async requestCertificate FindById(@param({ name: 'id', in: 'path' }) id: string, @param({ name: 'filter', in: 'query' }) filter: string): Promise<AddCoffee> {
   //   throw new Error('Not implemented');
   // }
 

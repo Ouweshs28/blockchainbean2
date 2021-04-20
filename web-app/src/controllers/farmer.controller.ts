@@ -1,6 +1,6 @@
 /* tslint:disable:no-any */
 import { operation, param, requestBody } from '@loopback/rest';
-import { Grower } from '../models/grower.model';
+import { Farmer } from '../models/farmer.model';
 import { Address } from '../models/address.model';
 import { BlockChainModule } from '../blockchainClient';
 import { ResponseMessage } from '../models/response-message.model';
@@ -11,7 +11,7 @@ let blockchainClient = new BlockChainModule.BlockchainClient();
  * by Grower
  * A participant named Grower
  */
-export class GrowerController {
+export class FarmerController {
   constructor() { }
 
   /**
@@ -21,7 +21,7 @@ export class GrowerController {
    * @param requestBody Model instance data
    * @returns Request was successful
    */
-  @operation('post', '/Grower', {
+  @operation('post', '/Farmer', {
     responses: {
       '200': {
         description: 'ResponseMessage model instance',
@@ -29,23 +29,23 @@ export class GrowerController {
       },
     },
   })
-  async growerCreate(@requestBody() requestBody: Grower): Promise<ResponseMessage> {
+  async farmerCreate(@requestBody() requestBody: Farmer): Promise<ResponseMessage> {
     try {
       let networkObj = await blockchainClient.connectToNetwork();
       console.log('request body: ')
       console.log(requestBody)
       let dataForAddMember = {
         function: 'addMember',
-        id: requestBody.growerId,
+        id: requestBody.farmerId,
         organization: requestBody.organization,
         address: `${requestBody.address.street} ${requestBody.address.city} ${requestBody.address.zip} ${requestBody.address.country}`,
-        memberType: 'grower',
+        memberType: 'farmer',
         contract: networkObj.contract
       };
 
       await blockchainClient.addMember(dataForAddMember);
 
-      let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added Grower to Blockchain' });
+      let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added farmer to Blockchain' });
       return responseMessage;
 
     } catch (error) {
@@ -62,7 +62,7 @@ export class GrowerController {
    * @param filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({"something":"value"})
    * @returns Request was successful
    */
-  // @operation('get', '/Grower')
+  // @operation('get', '/buyer')
   // async growerFind(@param({ name: 'filter', in: 'query' }) filter: string): Promise<Grower[]> {
   //   throw new Error('Not implemented');
   // }
