@@ -20,13 +20,6 @@ export class ApproveCertificate {
    */
   @property({name: 'regulator', required: true})
   regulator: string;
-  /**
-   * 
-   */
-  @property({name: 'certificateState', required: true})
-  certificateState: string;
-
-
    /**
    * 
    */

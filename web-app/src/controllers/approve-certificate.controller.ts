@@ -24,7 +24,7 @@ export class ApproveCertificateController {
   async approveCertificateCreate(@requestBody() requestBody: ApproveCertificate): Promise<ResponseMessage> {
 
     try {
-      console.log('regulatorBodyApproval, requestBody: ')
+      console.log('approveCertificate, requestBody: ')
 
 
       console.log('request body: ')
@@ -36,11 +36,10 @@ export class ApproveCertificateController {
       let dateStr = new Date().toDateString();
       // dateStr = dateStr.toDateString();
       let regData = {
-        function: 'regulatoryBodyApproval',
+        function: 'approveCertificate',
 
         regulator: requestBody.regulator,
         applicationId: requestBody.applicationId,
-        certificateState: requestBody.certificateState,
         regulatorComments: requestBody.regulatorComments,
         timestamp: dateStr,
         contract: networkObj.contract

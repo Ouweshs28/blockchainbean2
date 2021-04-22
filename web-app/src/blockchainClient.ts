@@ -133,7 +133,7 @@ export module BlockChainModule {
       console.log('args in the blockchain client')
       console.log(args)
 
-      let response = await args.contract.submitTransaction(args.function, args.clinicalLaboratory, args.applicationID, args.testResults, args.labComments, args.timestamp);
+      let response = await args.contract.submitTransaction(args.function, args.clinicalLaboratory, args.applicationId, args.testResults, args.labComments, args.timestamp);
         return response;
 
     }
@@ -142,7 +142,7 @@ export module BlockChainModule {
       console.log('args in the blockchain client')
       console.log(args)
 
-      let response = await args.contract.submitTransaction(args.function, args.regulator, args.applicationID, args.certificateState, args.regulatorComments, args.timestamp);
+      let response = await args.contract.submitTransaction(args.function, args.regulator, args.applicationId, args.regulatorComments, args.timestamp);
       return response;
 
     }
