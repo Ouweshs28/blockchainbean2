@@ -1,7 +1,7 @@
 {
-  "name": "beanclient",
+  "name": "mauriclient",
   "version": "1.0.0",
-  "description": "beanClientLB",
+  "description": "mauriClientLB",
   "keywords": [
     "loopback-application",
     "loopback"
