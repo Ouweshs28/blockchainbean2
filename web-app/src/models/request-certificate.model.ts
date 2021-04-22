@@ -12,11 +12,6 @@ export class RequestCertificate {
       Object.assign(this, data);
     }
   }
-  /**
-   * 
-   */
-  @property({name: 'certificateState', required: true})
-  certificateState?: string;
 
   /**
    * The instance identifier for this type

@@ -509,12 +509,12 @@ available in the commands.txt file).
 
 ```json
 {
-  "$class": "org.ibm.coffee.Grower",
+  "$class": "org.ibm.food.Grower",
   "isFairTrade": true,
   "growerId": "Grower-0201",
   "organization": "Ethiopia Gedeb 1 Banko Gotiti GrainPro",
   "address": {
-    "$class": "org.ibm.coffee.Address",
+    "$class": "org.ibm.food.Address",
     "city": "Gedeb",
     "country": "Ethiopia",
     "street": "N/A",

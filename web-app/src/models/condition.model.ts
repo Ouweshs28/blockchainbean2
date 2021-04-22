@@ -17,7 +17,7 @@ export class Condition {
    * The class identifier for this type
    */
   @property({name: '$class'})
-  $class?: string = 'org.ibm.coffee.Condition';
+  $class?: string = 'org.ibm.food.Condition';
 
   /**
    * 

@@ -151,12 +151,12 @@ to the request body. P.S. (I have made all the commands available in the `comman
 
 ```
 {
-  "$class": "org.ibm.coffee.Grower",
+  "$class": "org.ibm.food.Grower",
   "isFairTrade": true,
   "growerId": "Grower-0201",
   "organization": "Ethiopia Gedeb 1 Banko Gotiti GrainPro",
   "address": {
-    "$class": "org.ibm.coffee.Address",
+    "$class": "org.ibm.food.Address",
     "city": "Gedeb",
     "country": "Ethiopia",
     "street": "N/A",
@@ -188,11 +188,11 @@ except add in the following json:
 
 ```
 {
-  "$class": "org.ibm.coffee.Trader",
+  "$class": "org.ibm.food.Trader",
   "traderId": "Trader-0791",
   "organization": "Royal Coffee New York",
   "address": {
-    "$class": "org.ibm.coffee.Address",
+    "$class": "org.ibm.food.Address",
     "city": "South Plainfield",
     "country": "USA"
   }
@@ -203,11 +203,11 @@ Same thing with the `/POST/Shipper` now:
 
 ```
 {
-  "$class": "org.ibm.coffee.Shipper",
+  "$class": "org.ibm.food.Shipper",
   "shipperId": "Maersk",
   "organization": "A.P. Moller–Maersk Group",
   "address": {
-    "$class": "org.ibm.coffee.Address",
+    "$class": "org.ibm.food.Address",
     "city": "Copenhagen",
     "country": "Denmark",
     "street": "N/A",
@@ -219,11 +219,11 @@ Same thing with the `/POST/Shipper` now:
 And the retailer i.e. `/POST/retailer`: 
 ```
 {
-  "$class": "org.ibm.coffee.Retailer",
+  "$class": "org.ibm.food.Retailer",
   "retailerId": "BrooklynRoasting",
   "organization": "Brooklyn Roasting Company",
   "address": {
-    "$class": "org.ibm.coffee.Address",
+    "$class": "org.ibm.food.Address",
     "city": "Brooklyn",
     "country": "USA",
     "street": "25 Jay St",
@@ -236,11 +236,11 @@ And last but not least, the regulator :) (`/POST/regulator`)
 
 ```
 {
-  "$class": "org.ibm.coffee.Regulator",
+  "$class": "org.ibm.food.Regulator",
   "regulatorId": "ICO",
   "organization": "International Coffee Organization",
   "address": {
-    "$class": "org.ibm.coffee.Address",
+    "$class": "org.ibm.food.Address",
     "city": "London",
     "country": "England",
     "street": "22 Berners Street",
@@ -336,8 +336,8 @@ but don't forget to use ***YOUR OWN batchId*** :) :
 
 ```
 {
-  "grower": "resource:org.ibm.coffee.Grower#Grower-0201",
-  "trader": "resource:org.ibm.coffee.Trader#Trader-0791",
+  "grower": "resource:org.ibm.food.Grower#Grower-0201",
+  "trader": "resource:org.ibm.food.Trader#Trader-0791",
   "PL_Invoice_no": "0067",
   "PL_IssueDate": "2017-09-19T00:00:00.000Z",
   "PL_ICO_no": "010/0150/0128",
@@ -380,7 +380,7 @@ The response should be as follows:
 ```
 
 Submit hello world transaction.
-"{\"PL_Bill_of_Lading_No\":\"961972237\",\"PL_Container_No\":\"redacted\",\"PL_FDA_NO\":\"15752850924\",\"PL_ICO_Lot\":\"Lot 7\",\"PL_ICO_no\":\"010/0150/0128\",\"PL_Invoice_no\":\"0067\",\"PL_IssueDate\":\"2017-09-19T00:00:00.000Z\",\"PL_LoadedVessel\":\"NorthernMagnum\",\"PL_Seal_no\":\"ML-Dj0144535 20 DRY 8’6\",\"PL_VesselVoyage_No\":\"1707\",\"PL_timestamp\":\"2018-06-17\",\"batchId\":\"hz4dzq6ilk\",\"batchState\":\"READY_FOR_DISTRIBUTION\",\"fairTradePremiumInvested\":\"$182273\",\"grower\":\"resource:org.ibm.coffee.Grower#Grower-0201\",\"investmentAmount1\":\"$30,626\",\"investmentAmount2\":\"Road Infrastructure\",\"investmentAmount3\":\"Food Security\",\"investmentTitle1\":\"School Classroom Addition\",\"investmentTitle2\":\"$43,251\",\"investmentTitle3\":\"$34,411\",\"orgDescription\":\"YCFCU is an Ethiopian coffee producing, processing, and exporting cooperative union founded in 2002. YCFCU represents 23 base level cooperatives, all located in the Gedeo Zone, within the Southern NationsNationalities and Peope (SNNPR) ethnically-based region of Ethiopia. Given that its members depend on coffee as their sole source of income, YCFCU aims to maximize financial returns to its members through its linkages with international markets.\",\"reportName\":\"Fair Trade Coffee Supply Chain Report\",\"reportYear\":\"2016\",\"roast\":\"DARK\",\"size\":\"LARGE\",\"timestamp\":\"2018-07-19T21:55:41.859Z\",\"trader\":\"resource:org.ibm.coffee.Trader#Trader-0791\",\"transactionId\":\"2e3dfb77486cf5ad731777614741fd68c7adea8d87a103bd03e7296f46f87b82\"}"
+"{\"PL_Bill_of_Lading_No\":\"961972237\",\"PL_Container_No\":\"redacted\",\"PL_FDA_NO\":\"15752850924\",\"PL_ICO_Lot\":\"Lot 7\",\"PL_ICO_no\":\"010/0150/0128\",\"PL_Invoice_no\":\"0067\",\"PL_IssueDate\":\"2017-09-19T00:00:00.000Z\",\"PL_LoadedVessel\":\"NorthernMagnum\",\"PL_Seal_no\":\"ML-Dj0144535 20 DRY 8’6\",\"PL_VesselVoyage_No\":\"1707\",\"PL_timestamp\":\"2018-06-17\",\"batchId\":\"hz4dzq6ilk\",\"batchState\":\"READY_FOR_DISTRIBUTION\",\"fairTradePremiumInvested\":\"$182273\",\"grower\":\"resource:org.ibm.food.Grower#Grower-0201\",\"investmentAmount1\":\"$30,626\",\"investmentAmount2\":\"Road Infrastructure\",\"investmentAmount3\":\"Food Security\",\"investmentTitle1\":\"School Classroom Addition\",\"investmentTitle2\":\"$43,251\",\"investmentTitle3\":\"$34,411\",\"orgDescription\":\"YCFCU is an Ethiopian coffee producing, processing, and exporting cooperative union founded in 2002. YCFCU represents 23 base level cooperatives, all located in the Gedeo Zone, within the Southern NationsNationalities and Peope (SNNPR) ethnically-based region of Ethiopia. Given that its members depend on coffee as their sole source of income, YCFCU aims to maximize financial returns to its members through its linkages with international markets.\",\"reportName\":\"Fair Trade Coffee Supply Chain Report\",\"reportYear\":\"2016\",\"roast\":\"DARK\",\"size\":\"LARGE\",\"timestamp\":\"2018-07-19T21:55:41.859Z\",\"trader\":\"resource:org.ibm.food.Trader#Trader-0791\",\"transactionId\":\"2e3dfb77486cf5ad731777614741fd68c7adea8d87a103bd03e7296f46f87b82\"}"
 ```
 
 Note that here we are getting all data that is assocaited with our batchId. I.e.
@@ -448,7 +448,7 @@ The response:
 \"condition\":\"good\",\"cupper\":\"Brian\",
 \"dateStripped\":\"2017-10-06T00:00:00.000Z\",\"fairTradePremiumInvested\":\"$182273\",
 \"finalScore\":\"89\",\"flavor\":\"8\",
-\"grower\":\"resource:org.ibm.coffee.Grower#Grower-0201\",\"insectActivity\":\"none\",
+\"grower\":\"resource:org.ibm.food.Grower#Grower-0201\",\"insectActivity\":\"none\",
 \"investmentAmount1\":\"$30,626\",\"investmentAmount2\":\"Road Infrastructure\",
 \"investmentAmount3\":\"Food Security\",\"investmentTitle1\":\"School Classroom 
 Addition\",\"investmentTitle2\":\"$43,251\",\"investmentTitle3\":\"$34,411\",
@@ -460,7 +460,7 @@ Given that its members depend on coffee as their sole source of income, YCFCU ai
 maximize financial returns to its members through its linkages with international 
 markets.\",\"reportName\":\"Fair Trade Coffee Supply Chain Report\",
 \"reportYear\":\"2016\",\"roast\":\"DARK\",\"size\":\"LARGE\",\"timestamp\":\"Tue Feb 
-19 2019\",\"trader\":\"resource:org.ibm.coffee.Trader#Trader-0791\",
+19 2019\",\"trader\":\"resource:org.ibm.food.Trader#Trader-0791\",
 \"transactionId\":\"cdcf476897109c6470e476eac2b90c05c223e64681311b2fabbb175f26ac8c8b\"}"
 ```
 
@@ -501,7 +501,7 @@ You should get the following output:
 ```
 
 "{\"barista\":\"Siv\",\"batchId\":\"hz4dzq6ilk\",\"beanType\":\"Ethiopian Natural Yirgacheffe\",
-\"class\":\"org.ibm.coffee.pourCup\",\"cupId\":\"NJB123\",\"drinkType\":\"Nitro\",\"lastPour\":\"Wed Feb 20 2019 22:18:46 GMT+0000 
+\"class\":\"org.ibm.food.pourCup\",\"cupId\":\"NJB123\",\"drinkType\":\"Nitro\",\"lastPour\":\"Wed Feb 20 2019 22:18:46 GMT+0000 
 (UTC)\",\"transactionId\":\"cdcf476897109c6470e476eac2b90c05c223e64681311b2fabbb175f26ac8c8b\"}"
 ```
 

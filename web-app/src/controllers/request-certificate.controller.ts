@@ -20,7 +20,7 @@ export class RequestCertificateController {
    * @param requestBody Model instance data
    * @returns Request was successful
    */
-  @operation('post', '/requestCertificate ', {
+  @operation('post', '/requestCertificate', {
     responses: {
       '200': {
         description: 'ResponseMessage model instance',
@@ -41,6 +41,7 @@ export class RequestCertificateController {
         address:requestBody.address,
         cropName:requestBody.cropName,
         ferlizers:requestBody.ferlizers,
+        farmArea:requestBody.farmArea,
         timestamp: dateStr,
         contract: networkObj.contract
       };

@@ -17,7 +17,7 @@ export class Address {
    * The class identifier for this type
    */
   @property({name: '$class'})
-  $class?: string = 'org.ibm.coffee.Address';
+  $class?: string = 'org.ibm.food.Address';
 
   /**
    * 
