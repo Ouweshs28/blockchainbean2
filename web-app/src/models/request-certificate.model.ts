@@ -25,7 +25,7 @@ export class RequestCertificate {
   // batchId?: string;
 
   @property({name: 'applicationId'})
-  transactionId?: string;
+  applicationId?: string;
 
   /**
    * 
