@@ -41,7 +41,6 @@ export class ApproveCertificateController {
         regulator: requestBody.regulator,
         applicationId: requestBody.applicationId,
         regulatorComments: requestBody.regulatorComments,
-        timestamp: dateStr,
         contract: networkObj.contract
       };
 

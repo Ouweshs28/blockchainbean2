@@ -48,7 +48,7 @@
 
 {
   "farmerName": "Carlos Mario",
-  "farmerId": "CM2302037500AB",
+  "farmerId": "CM2302037500AC",
   "address": "Royal Road Lallmati",
   "cropName": "Tomatos",
   "ferlizers": "Cyromazine",
@@ -59,9 +59,9 @@
 // PERFORM TEST
 {
   "clinicalLaboratory": "FAREI",
-  "applicationId": "nfx8nl051",
+  "applicationId": "1fdg704hae",
   "testResults": "PASS",
-  "labComments": "The sample was pesiticde level was below average",
+  "labComments": "The sample was pesiticde level was below average"
 }
 
 // APPROVE CERTIFICATE 
@@ -69,6 +69,6 @@
 {
   "regulator": "MACB",
   "regulatorComments": "Results passed, good to go",
-  "applicationId": "nfx8nl051"
+  "applicationId": "1fdg704hae"
 }
 

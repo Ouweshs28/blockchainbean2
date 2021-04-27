@@ -142,7 +142,7 @@ export module BlockChainModule {
       console.log('args in the blockchain client')
       console.log(args)
 
-      let response = await args.contract.submitTransaction(args.function, args.regulator, args.applicationId, args.regulatorComments, args.timestamp);
+      let response = await args.contract.submitTransaction(args.function, args.regulator, args.applicationId, args.regulatorComments);
       return response;
 
     }
